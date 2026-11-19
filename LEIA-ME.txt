@@ -1,0 +1,13 @@
+NA FONTE — loja online
+Suba ESTES 4 arquivos para a raiz do repositório kryptonitaundergroud/nafontemob:
+  index.html            (substitui o atual)
+  apple-touch-icon.png  (ícone do app iPhone)
+  icon-512.png          (ícone grande)
+  manifest.webmanifest  (config do app)
+  pasta assets/gifs/      (os 5 gifs otimizados)
+      -> na raiz do repo crie a pasta assets, dentro dela a pasta gifs, e suba os 5 arquivos .gif
+
+Como instalar no iPhone: abra o site no Safari → botão Compartilhar (quadrado com seta pra cima) →
+"Adicionar à Tela de Início" → o ícone NF aparece na sua home como um app.
+
+Pasta assets/imgs/: fotos de MARROCOS BEN 10, CHOKITO, ABACAXI MDA LAB e extra — subir junto com o resto (na raiz assets, ao lado de gifs).
