@@ -1698,7 +1698,7 @@ var ims=r.tagName==='IMG'?[r]:Array.prototype.slice.call(r.querySelectorAll?r.qu
 ims.forEach(function(x){if((x.currentSrc||x.src||'').indexOf('data:video/')===0)fix(x);});}
 new MutationObserver(function(es){es.forEach(function(en){en.addedNodes.forEach(function(n){
 if(n.nodeType===1)scan(n);});});}).observe(document.documentElement,{childList:true,subtree:true});
-document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('img[data-gfb]').forEach(fix)});
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('img[data-gfb]').forEach(function(x){if((x.currentSrc||x.src||'').indexOf('data:video/')===0)fix(x)})});
 })();</script>
 <div id="nfxbar"><div><div class="lbl">SEU LOTE</div><div class="amt" id="nfxamt">—</div></div><div class="prod" id="nfxprod"></div><button type="button" class="go" id="nfxgo">⚡ PEDIR</button></div>
 <nav id="nfxnav">
