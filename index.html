@@ -221,6 +221,7 @@ header{text-align:center;padding:20px 16px 12px}
 #howto li b{color:var(--ink)}
 #howx{position:absolute;top:12px;right:12px;width:30px;height:30px;border-radius:9px;border:1px solid var(--line);background:#FBFAF7;color:var(--mut);font:700 13px 'Roboto'}
 /* ============ NFX BAR ============ */
+.gh{position:absolute;bottom:4px;left:4px;width:0;height:0;overflow:hidden}
 #nfxbar{position:fixed;left:12px;right:12px;bottom:calc(70px + env(safe-area-inset-bottom));z-index:85;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid rgba(112,52,216,.35);border-radius:15px;padding:10px 12px 10px 15px;color:var(--ink);box-shadow:0 12px 34px rgba(23,22,26,.16),0 0 22px var(--glow);opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .25s,transform .25s}
 #nfxbar.on{opacity:1;pointer-events:auto;transform:translateY(0)}
 #nfxbar .lbl{font:900 9px 'JetBrains Mono',monospace;letter-spacing:1.6px;color:var(--dim)}
@@ -524,7 +525,7 @@ html{scroll-behavior:auto}
 <button type="button" class="ctb">⧉ COPIAR TABELA DO PRODUTO</button>
 <div class="acts"><button type="button" class="bp">PEDIR AGORA</button><button type="button" class="ba">+ CARRINHO</button></div>
 </div></article>
-</div><span class="gh" data-g="1" aria-hidden="true">▣</span></section>
+</div><span class="gh" data-g="1" aria-hidden="true">👻</span></section>
 <section class="sec" data-sec="dry"><h2>DRY<span class="cnt">3</span></h2><div class="grid">
 
 
@@ -1585,8 +1586,8 @@ function copyText(txt,btn){
 (function(){var moon=$('#moon');if(!moon)return;var n=0,t0=0;
  moon.addEventListener('click',function(){var t=Date.now();if(t-t0>800)n=0;n++;t0=t;
   if(n<3)return;n=0;moon.classList.add('wob');setTimeout(function(){moon.classList.remove('wob')},1200);
-  toast('TRICK OR TREAT ▣');
-  var em=['◍','▲','▣','░','●'];
+  toast('TRICK OR TREAT 👻');
+  var em=['◍','▲','✦','░','●'];
   for(var i=0;i<12;i++){var s=document.createElement('span');s.className='conf';s.textContent=em[i%em.length];
    s.style.left=(4+Math.random()*92)+'vw';s.style.animationDelay=(Math.random()*0.7)+'s';
    document.body.appendChild(s);(function(el){setTimeout(function(){el.remove()},3700)})(s)}});
@@ -1824,7 +1825,7 @@ var nx=$('#noresx');if(nx)nx.addEventListener('click',function(){$('#q').value='
 (function(){var nc=$('#navcnt'),bn=$('#cartn');function syncN(){if(!nc||!bn)return;nc.textContent=bn.textContent;nc.classList.toggle('off',bn.classList.contains('off'))}new MutationObserver(syncN).observe(bn,{characterData:true,childList:true,attributes:true});syncN()})();
 })();
 </script>
-<div id="howbtn" role="button" aria-label="como funciona" title="Como funciona a loja">❓</div><div id="howto"><button type="button" id="howx" aria-label="fechar">✕</button><h4>COMO FUNCIONA A LOJA</h4><ol><li><b>Ache o produto</b> — campo BUSCAR no topo ou pelas abas: FLORES · ICE · DRY · LSD · 💧 GOTTA · M.D · BALAS · BALAS GRINGAS.</li><li><b>Fotos e vídeos</b> — toque na mídia do card: abre em tela cheia, passe o dedo para ver o álbum inteiro e use ⤓ para baixar.</li><li><b>Quantidade e lote</b> — cada lote muda o preço (10/50/100 unid, placas, grama…): escolha o lote, ajuste com −/+ e o total acompanha.</li><li><b>Feche o pedido</b> — PEDIR AGORA chama seu contato direto, ou + CARRINHO acumula vários itens e você fecha tudo junto (▣ no topo).</li><li><b>Saída e pagamento</b> — envios terças e quintas saindo de SP, toda a tabela sai junta · Sedex fixo R$ 150 · transportadora R$ 200 · carta registrada R$ 35 · retirada em SP taxa R$ 50 (entrega consultar) · PIX · depósito · espécie 💸.</li></ol></div><script>(function(){function fix(im){var v=document.createElement('video');
+<div id="howbtn" role="button" aria-label="como funciona" title="Como funciona a loja">❓</div><div id="howto"><button type="button" id="howx" aria-label="fechar">✕</button><h4>COMO FUNCIONA A LOJA</h4><ol><li><b>Ache o produto</b> — campo BUSCAR no topo ou pelas abas: FLORES · ICE · DRY · LSD · 💧 GOTTA · M.D · BALAS · BALAS GRINGAS.</li><li><b>Fotos e vídeos</b> — toque na mídia do card: abre em tela cheia, passe o dedo para ver o álbum inteiro e use ⤓ para baixar.</li><li><b>Quantidade e lote</b> — cada lote muda o preço (10/50/100 unid, placas, grama…): escolha o lote, ajuste com −/+ e o total acompanha.</li><li><b>Feche o pedido</b> — PEDIR AGORA chama seu contato direto, ou + CARRINHO acumula vários itens e você fecha tudo junto (sacola no topo).</li><li><b>Saída e pagamento</b> — envios terças e quintas saindo de SP, toda a tabela sai junta · Sedex fixo R$ 150 · transportadora R$ 200 · carta registrada R$ 35 · retirada em SP taxa R$ 50 (entrega consultar) · PIX · depósito · espécie 💸.</li></ol></div><script>(function(){function fix(im){var v=document.createElement('video');
 v.src=im.src;v.autoplay=true;v.loop=true;v.muted=true;v.playsInline=true;
 v.setAttribute('playsinline','1');
 v.style.cssText='max-width:100%;max-height:78vh;display:block;margin:auto;border-radius:12px;background:#000';
