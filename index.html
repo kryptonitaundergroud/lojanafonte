@@ -80,9 +80,10 @@ header{text-align:center;padding:20px 16px 12px}
 #q{flex:1;min-width:0;height:46px;border-radius:12px;border:1.5px solid var(--line2);background:#fff;color:var(--ink);padding:0 15px;font:500 14px 'Roboto'}
 #q:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px var(--glow)}
 #q::placeholder{color:var(--dim)}
-#cartb{display:inline-flex;align-items:center;gap:7px;height:46px;padding:0 15px;border-radius:12px;border:none;background:var(--acc);color:#fff;font:900 10.5px 'Roboto';letter-spacing:1.3px;box-shadow:0 4px 14px var(--glow)}
+#cartb{position:relative;display:inline-flex;align-items:center;justify-content:center;height:46px;width:46px;padding:0;border-radius:13px;border:none;background:var(--acc);color:#fff;box-shadow:0 4px 14px var(--glow)}
+#cartb svg{width:20px;height:20px}
 #cartb:active{transform:scale(.97)}
-#cartn{min-width:19px;height:19px;padding:0 5px;border-radius:6px;background:#fff;color:var(--acc);font:900 10.5px/19px 'Roboto';text-align:center}
+#cartn{position:absolute;top:-5px;right:-5px;min-width:19px;height:19px;padding:0 5px;border-radius:99px;background:var(--ink);color:#fff;font:900 10px/19px 'Roboto';text-align:center}
 #cartn.off{display:none}
 /* ============ ABAS (filtros) ============ */
 .tabs{display:flex;gap:7px;overflow-x:auto;padding:9px 12px;scrollbar-width:none;position:sticky;top:66px;z-index:59;background:rgba(247,246,242,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
@@ -111,8 +112,9 @@ header{text-align:center;padding:20px 16px 12px}
 .card::after{content:none}
 .card:nth-child(2){animation-delay:.04s}.card:nth-child(3){animation-delay:.08s}.card:nth-child(4){animation-delay:.12s}.card:nth-child(5){animation-delay:.16s}.card:nth-child(6){animation-delay:.2s}
 .card:hover{border-color:var(--acc);transform:translateY(-2px);box-shadow:0 12px 28px rgba(112,52,216,.10)}
-.media{position:relative;aspect-ratio:1/1;min-height:0;background:#EFEDF6;overflow:hidden;cursor:pointer}
-.media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+.media{position:relative;aspect-ratio:1/1;min-height:0;background:repeating-linear-gradient(135deg,#F1EFF7 0 14px,#EAE7F2 14px 28px);overflow:hidden;cursor:pointer}
+.media::after{content:'NF';position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;font:900 30px 'Roboto';letter-spacing:2px;color:rgba(112,52,216,.16)}
+.media img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;display:none}
 .media img.on{display:block}
 .media img:not(.slimg){display:block}
 .flame{position:absolute;top:8px;right:8px;z-index:3;font-size:14px;line-height:1}
@@ -125,14 +127,15 @@ header{text-align:center;padding:20px 16px 12px}
 .body{display:flex;flex-direction:column;flex:1;padding:10px 10px 12px}
 .body h3{font:700 13px/1.3 'Roboto';letter-spacing:.2px;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .desc{margin-top:3px;font:400 11px/1.45 'Roboto';color:var(--mut);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.tiers{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
-.tier{position:relative;flex:0 1 auto;min-width:44%;display:flex;justify-content:space-between;align-items:center;gap:6px;padding:7px 9px;border:1px solid var(--line2);border-radius:10px;background:#FBFAF7;cursor:pointer;transition:all .14s ease}
+.tiers{display:flex;flex-wrap:nowrap;gap:6px;margin-top:9px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.tiers::-webkit-scrollbar{display:none}
+.tier{position:relative;flex:0 0 auto;display:inline-flex;align-items:baseline;gap:8px;padding:8px 12px;border:1px solid var(--line2);border-radius:99px;background:#fff;cursor:pointer;transition:all .14s ease;white-space:nowrap}
 .tier .tl{font:700 11.5px/1.2 'Roboto';color:var(--ink);white-space:nowrap}
-.tier .pg{display:block;margin-top:2px;font:500 9px/1.3 'JetBrains Mono',monospace;color:var(--dim)}
+.tier .pg{display:none}
 .tier .tp{font:900 12px/1.2 'Roboto';color:var(--acc);text-align:right;white-space:nowrap}
 .tier .tu{font:500 8.5px 'Roboto';color:var(--dim);letter-spacing:.3px}
 .tier.sel{border-color:var(--acc);background:var(--accdk);box-shadow:inset 0 0 0 1px var(--acc)}
-.tier.sel::after{content:'\2713';color:var(--acc);font:900 10px/1 'Roboto';position:absolute;top:4px;right:6px}
+.tier.sel::after{content:'\2713';color:var(--acc);font:900 9px/1 'Roboto';position:absolute;top:50%;transform:translateY(-50%);right:7px}
 .qtyrow{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:9px}
 .qlab{font:700 9px 'JetBrains Mono',monospace;letter-spacing:1.8px;color:var(--dim);text-transform:uppercase}
 .qty{display:flex;align-items:center;gap:0;border:1px solid var(--line2);border-radius:10px;overflow:hidden;background:#fff}
@@ -142,7 +145,7 @@ header{text-align:center;padding:20px 16px 12px}
 .qv::-webkit-inner-spin-button,.qv::-webkit-outer-spin-button{-webkit-appearance:none}
 .qv:focus{outline:none}
 .cta{margin-top:10px}
-.ctb{width:100%;padding:8px;border-radius:9px;border:1px dashed var(--line2);background:transparent;color:var(--dim);font:700 9px 'JetBrains Mono',monospace;letter-spacing:1.4px}
+.ctb{width:100%;padding:7px;border-radius:9px;border:1px dashed var(--line2);background:transparent;color:var(--dim);font:700 8.5px 'JetBrains Mono',monospace;letter-spacing:1.1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ctb:hover{border-color:var(--acc);color:var(--acc)}
 .acts{display:flex;gap:8px;margin-top:10px}
 .bp,.ba{flex:1;padding:12px 8px;border-radius:11px;font:900 11.5px 'Roboto';letter-spacing:.8px;transition:transform .12s ease,filter .12s ease}
@@ -228,10 +231,11 @@ header{text-align:center;padding:20px 16px 12px}
 /* ============ BARRA INFERIOR DO APP ============ */
 #nfxnav{position:fixed;left:0;right:0;bottom:0;z-index:84;display:flex;background:var(--dark);border-top:1px solid #26242c;padding-bottom:env(safe-area-inset-bottom)}
 #nfxnav button{flex:1;position:relative;background:none;border:none;padding:9px 0 8px;font:900 9px 'Roboto';letter-spacing:1.6px;color:#8D8598}
-#nfxnav .ic{display:block;font-size:17px;margin-bottom:3px;filter:grayscale(.5);opacity:.85}
+#nfxnav .ic{display:flex;align-items:center;justify-content:center;width:22px;height:22px;margin:0 auto 4px}
+#nfxnav .ic svg{width:20px;height:20px}
 #nfxnav button:active{transform:scale(.94)}
 #nfxnav button.nfon{color:var(--lav)}
-#nfxnav button.nfon .ic{filter:none;opacity:1}
+#nfxnav button.nfon .ic svg{stroke:var(--lav)}
 #nfxnav button.nfon::after{content:'';position:absolute;left:50%;top:0;transform:translateX(-50%);width:26px;height:2px;border-radius:2px;background:var(--lav)}
 #navcnt{position:absolute;top:4px;left:calc(50% + 14px);min-width:17px;height:17px;padding:0 4px;border-radius:99px;background:var(--acc);color:#fff;font:900 9.5px/17px 'Roboto';text-align:center}
 #navcnt.off{display:none}
@@ -265,6 +269,7 @@ section.nfx-hero .chips span{font:500 10px/1 'JetBrains Mono',monospace;color:va
 #nfxc1{width:100%;margin-top:14px;padding:15px;border-radius:11px;border:none;background:var(--acc);color:#fff;font:900 12.5px 'Roboto';letter-spacing:1.6px;box-shadow:0 8px 22px var(--glow)}
 #nfxc1:active{transform:scale(.98)}
 /* ============ FOOTER ============ */
+.crt{display:none}
 footer{padding:26px 16px calc(124px + env(safe-area-inset-bottom));text-align:center;font:500 10.5px 'Roboto';letter-spacing:1.2px;color:var(--dim)}
 footer b{color:var(--ink)}
 footer .fd{color:var(--acc)}
@@ -276,6 +281,7 @@ header{padding-top:14px;padding-bottom:8px}
 .logo img{width:34px;height:34px}
 .subl{margin-top:5px}
 .tabs{top:66px}
+.desc{display:none!important}
 #howbtn{display:none}
 }
 /* ============ DESKTOP: navegação no topo, 4 colunas ============ */
@@ -334,7 +340,7 @@ html{scroll-behavior:auto}
 <div class="bar">
  <div class="barrow">
   <input id="q" type="search" placeholder="BUSCAR… ex: jesus, ice 100g, gummy" autocomplete="off" autocapitalize="off" aria-label="Buscar produto">
-  <button type="button" id="cartb" aria-label="carrinho">CART<b id="cartn" class="off">0</b></button>
+  <button type="button" id="cartb" aria-label="sacola"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l1 13H5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><b id="cartn" class="off">0</b></button>
  </div>
  
 </div>
@@ -1508,7 +1514,7 @@ Super Joy ................ 13k
 
  <button type="button" id="cpall">≡ COPIAR TODAS AS TABELAS</button>
 </section>
-<footer><span class="fd">▣</span>PREÇO JUSTO E QUALIDADE &nbsp;·&nbsp; BY <b>NA FONTE</b>&nbsp; ✦</footer>
+<footer><span class="fd">✦</span> PREÇO JUSTO E QUALIDADE &nbsp;·&nbsp; BY <b>NA FONTE</b>&nbsp; ✦</footer>
 <div id="scrim"></div>
 <div id="drawer" role="dialog" aria-label="seu pedido">
  <div class="dhead"><b>SEU SACO DE DOCURAS <span id="dcnt">(0)</span></b><button type="button" id="dclos" aria-label="fechar">✕</button></div>
@@ -1830,7 +1836,7 @@ if(n.nodeType===1)scan(n);});});}).observe(document.documentElement,{childList:t
 document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('img[data-gfb]').forEach(function(x){if((x.currentSrc||x.src||'').indexOf('data:video/')===0)fix(x)})});
 })();</script>
 <div id="nfxbar"><div><div class="lbl">SEU LOTE</div><div class="amt" id="nfxamt">—</div></div><div class="prod" id="nfxprod"></div><button type="button" class="go" id="nfxgo">⚡ PEDIR</button></div>
-<nav id="nfxnav"><button type="button" data-nav="top"><span class="ic">🏠</span>INÍCIO</button><button type="button" data-nav="tabs"><span class="ic">⚡</span>CATEGORIAS</button><button type="button" data-nav="cart"><span class="ic">🛍</span>SACOLA<b id="navcnt" class="off">0</b></button></nav>
+<nav id="nfxnav"><button type="button" data-nav="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></span>INÍCIO</button><button type="button" data-nav="tabs"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg></span>CATEGORIAS</button><button type="button" data-nav="cart"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l1 13H5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></span>SACOLA<b id="navcnt" class="off">0</b></button></nav>
 <div class="crt"></div>
 <script>/* nfx-wire: barra de lote + navega\u00e7\u00e3o inferior */
 (function(){
