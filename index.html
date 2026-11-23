@@ -1986,5 +1986,24 @@ section.nfx-hero .cta::after{content:'';position:absolute;top:0;left:-60%;width:
  if(cn){var last=cn.textContent;new MutationObserver(function(){if(cn.textContent!==last){last=cn.textContent;var b=document.getElementById('navcnt');if(b){b.classList.remove('nfpop');void b.offsetWidth;b.classList.add('nfpop')}}}).observe(cn,{childList:true,characterData:true,subtree:true});}
 })();
 </script>
+
+<style id="nfxv17">
+@media (max-width:719px){
+ .grid{grid-template-columns:1fr !important;gap:18px}
+ .card .media{aspect-ratio:1/1 !important;border-radius:16px 16px 0 0}
+ .card .body{padding:14px 16px 16px}
+ .card h3{font-size:19px}
+ .card .sku{font-size:10px;padding:4px 9px}
+ .tier{min-height:60px !important;padding:12px 14px !important}
+ .tier .tl{font-size:16px !important}
+ .tier .tp{font-size:19px !important}
+ .tier .pg{font-size:12px !important}
+ .ctb{padding:14px !important;font-size:12px !important;margin-top:12px}
+ .acts button{padding:14px 12px !important;font-size:11.5px !important}
+ .qty input{height:48px !important;font-size:16px !important;width:70px}
+ .qty button{min-width:46px !important;height:48px !important}
+ .sec{margin-top:26px}
+}
+</style>
 </body>
 </html>
