@@ -7,7 +7,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="theme-color" content="#150A26">
-<meta name="nf-ver" content="42">
+<meta name="nf-ver" content="43">
 <title>NA FONTE — catálogo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin">
@@ -318,7 +318,7 @@ footer b{color:var(--ivo)}
 @keyframes gstf{from{transform:translateY(0)}to{transform:translateY(-5px)}}
 #gate h1{color:transparent;text-shadow:none;-webkit-text-fill-color:transparent;background:linear-gradient(180deg,#FFF9EE 0%,#FFE9C8 34%,#FF9A5C 54%,#FF2E88 70%,#A81E8E 100%);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 4px 0 rgba(24,10,40,.85)) drop-shadow(0 0 38px rgba(255,46,136,.45))}
 #gate h1 em{-webkit-text-fill-color:#FFA23D;color:#FFA23D;background:none;-webkit-background-clip:border-box;background-clip:border-box}
-#go{position:relative;overflow:hidden;background:linear-gradient(120deg,#FF2E88 0%,#FF7A3D 100%);color:#170B2C;box-shadow:0 0 40px rgba(255,46,136,.4),inset 0 1px 0 rgba(255,255,255,.35);clip-path:polygon(0 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%)}
+#go{position:relative;overflow:hidden;background:linear-gradient(120deg,#FF2E88 0%,#FF7A3D 100%);color:#170B2C;box-shadow:inset 0 1px 0 rgba(255,255,255,.35);clip-path:polygon(0 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%)}
 #go::after{content:"";position:absolute;top:0;bottom:0;left:0;width:34%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:translateX(-160%) skewX(-18deg);animation:sheen 3.6s ease-in-out infinite}
 @keyframes sheen{0%,55%{transform:translateX(-160%) skewX(-18deg)}80%{transform:translateX(330%) skewX(-18deg)}100%{transform:translateX(330%) skewX(-18deg)}}
 #gate p{color:#FFE9C8;opacity:.85}
@@ -333,6 +333,7 @@ footer b{color:var(--ivo)}
 .jsrv .card.rv-in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.jsrv .card{opacity:1;transform:none;transition:none}}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#170B2C}::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#FF2E88,#FF7A3D);border-radius:3px}
+@keyframes gopulse{0%,100%{filter:drop-shadow(0 0 16px rgba(255,46,136,.4))}50%{filter:drop-shadow(0 0 32px rgba(255,78,134,.72))}}
 </style>
 
 <meta name="mobile-web-app-capable" content="yes">
@@ -2087,7 +2088,7 @@ if(nav){Array.prototype.forEach.call(nav.querySelectorAll('button[data-nav]'),fu
  uv();window.addEventListener('scroll',uv,{passive:true});
 }catch(e){}})();
 </script>
-<!--NF-V42--><script>
+<!--NF-V43--><script>
 (function(){'use strict';try{
  var nv=document.getElementById('nfxnav');if(!nv)return;
  var top=nv.querySelector('[data-nav="top"]'),tabs=nv.querySelector('[data-nav="tabs"]');
