@@ -7,7 +7,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="theme-color" content="#0D0C14">
-<meta name="nf-ver" content="38">
+<meta name="nf-ver" content="39">
 <title>NA FONTE — catálogo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin">
@@ -308,6 +308,12 @@ footer b{color:var(--ivo)}
 <meta property="og:title" content="NA FONTE — Mercado Fechado">
 <meta property="og:description" content="Tabela da rua: flores, ice, dry, lsd, balas.">
 <meta property="og:image" content="https://kryptonitaundergroud.github.io/lojanafonte/logo.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NA FONTE — Mercado Fechado">
+<meta name="twitter:description" content="Tabela da rua: flores, ice, dry, lsd, balas.">
+<meta name="twitter:image" content="https://kryptonitaundergroud.github.io/lojanafonte/logo.png">
 <script>/* auto-refresh anti-cache */
 (function(){try{
  var v=document.querySelector('meta[name="nf-ver"]').content;
@@ -2012,7 +2018,31 @@ if(nav){Array.prototype.forEach.call(nav.querySelectorAll('button[data-nav]'),fu
 <style id="nfxv17">/* consolidado no design system 2.0 */</style>
 
 <style id="nfxv19">/* consolidado no design system 2.0 */</style>
-<!--NF-V38--><script>
+<div class="scrl" id="nfscrl" role="group" aria-label="atalhos de rolagem">
+<button type="button" id="nfdn" aria-label="ir para o fim da página"><span aria-hidden="true">↓</span></button>
+<button type="button" class="up" id="nfup" aria-label="voltar ao topo da página"><span aria-hidden="true">↑</span></button>
+</div>
+<style>
+.scrl{position:fixed;right:10px;bottom:calc(138px + env(safe-area-inset-bottom));z-index:96;display:flex;flex-direction:column;gap:8px}
+.scrl button{width:40px;height:40px;border-radius:4px;border:1px solid var(--line2);background:rgba(21,19,30,.92);color:var(--ivo);font-size:17px;line-height:1;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 8px 22px rgba(0,0,0,.40);transition:border-color var(--t1),color var(--t1),transform var(--t1)}
+.scrl button:active{transform:scale(.94);border-color:var(--lime);color:var(--lime)}
+.scrl .up{opacity:.32;pointer-events:none;transition:opacity var(--t2),border-color var(--t1),color var(--t1),transform var(--t1)}
+.scrl .up.on{opacity:1;pointer-events:auto}
+@media (min-width:760px){.scrl{right:22px}}
+</style>
+<script>
+(function(){'use strict';try{
+ var dn=document.getElementById('nfdn'),up=document.getElementById('nfup');
+ if(!dn||!up)return;
+ var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function go(y){window.scrollTo({top:y,behavior:rm?'auto':'smooth'})}
+ dn.addEventListener('click',function(){go(document.documentElement.scrollHeight)});
+ up.addEventListener('click',function(){go(0)});
+ function uv(){up.classList.toggle('on',window.scrollY>420)}
+ uv();window.addEventListener('scroll',uv,{passive:true});
+}catch(e){}})();
+</script>
+<!--NF-V39--><script>
 (function(){'use strict';try{
  var nv=document.getElementById('nfxnav');if(!nv)return;
  var top=nv.querySelector('[data-nav="top"]'),tabs=nv.querySelector('[data-nav="tabs"]');
